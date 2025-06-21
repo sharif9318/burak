@@ -16,3 +16,6 @@
 // (frontend) MVP (model-view-presenter), MVVM (model-view-view-model),
 
 //Design Patterns: middleware, decorators, etc.
+
+import dotenv from "dotenv";
+dotenv.config();
