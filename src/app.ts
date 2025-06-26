@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import router from "./router";
 
 // 1.ENTRANCE
 
@@ -17,5 +18,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // 4.Routers
+app.use("/", router); // Main router. this will handle all routes defined in the router module.
 
 export default app; //BU module JS formatda. Agar commonJS formatda bo'lsa, export default app; o'rniga module.exports = app; yozish kerak bo'ladi.
