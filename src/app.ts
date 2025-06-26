@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
-
+import routerAdmin from "./routerAdmin";
 // 1.ENTRANCE
 
 const app = express();
@@ -18,6 +18,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // 4.Routers
-app.use("/", router); // Main router. this will handle all routes defined in the router module.
-
-export default app; //BU module JS formatda. Agar commonJS formatda bo'lsa, export default app; o'rniga module.exports = app; yozish kerak bo'ladi.
+app.use("/admin", routerAdmin); //BSSR:EJS
+app.use("/", router); //SPA: REACT
+export default app;
