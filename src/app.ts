@@ -2,13 +2,17 @@ import express from "express";
 import path from "path";
 import router from "./router";
 import routerAdmin from "./routerAdmin";
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
 // 1.ENTRANCE
 
-const app = express();
 // Middleware
+
+const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan(MORGAN_FORMAT)); // Logging middleware
 
 // 2.Sessions
 
