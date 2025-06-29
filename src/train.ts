@@ -59,3 +59,8 @@
 //       folder names and file names: kebab-case
 //       css : snake_case
 // Error handling standards
+
+// Tradtional API
+// Rest API
+// GraphQL API
+// .....
