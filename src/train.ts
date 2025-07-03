@@ -64,3 +64,32 @@
 // Rest API
 // GraphQL API
 // .....
+
+console.log("=======task_i==========");
+
+function majorityElement(arr: number[]): number | null {
+  const countMap: Record<number, number> = {};
+  // Record is a utility type in TypeScript that allows you to create an object type with specific keys and values.
+  // In this case, countMap will have keys of type number and values of type number
+  for (const num of arr) {
+    countMap[num] = (countMap[num] || 0) + 1; // Here we are counting the occurrences of each number. || 0) + 1 calculates the count of each number in the array.
+  }
+
+  let maxCount = 0; // Initialize maxCount to 0 to keep track of the highest count
+  // maxCount will store the maximum count of any number in the array. For example, if the number 1 appears 3 times, maxCount will be updated to 3.
+  // If no number appears more than once, maxCount will remain 0.
+  let majority: number | null = null;
+
+  for (const key in countMap) {
+    // key is a string representing the number in countMap. For example, if countMap has letter "a ", it means the number 1 appeared in the array.
+    if (countMap[key] > maxCount) {
+      // If the count of the current number is greater than maxCount, we update maxCount and majority.
+      maxCount = countMap[key];
+      majority = Number(key);
+    }
+  }
+
+  return majority;
+}
+
+console.log(majorityElement([1, 2, 1, 4, 5, 1, 3, 4]));
