@@ -41,10 +41,13 @@ restaurantController.processLogin = async (req: Request, res: Response) => {
     const input: LoginInput = req.body;
     const memberService = new MemberService();
     const result = await memberService.processLogin(input);
-
     res.send(result);
-  } catch (err) {
+  } catch (err: any) {
     console.log("Error, processLogin", err);
+    // Send error response
+    res
+      .status(err.code || 500)
+      .json({ message: err.message || "Internal server error" });
   }
 };
 

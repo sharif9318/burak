@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { MemberType, MemberStatus } from "../libs/enums/member-enum";
 
-const memberSchema = new Schema(
+const memberSchema = new mongoose.Schema(
   {
     memberType: {
       type: String,
