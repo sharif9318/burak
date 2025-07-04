@@ -31,6 +31,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
     res.send("Signup Page");
   } catch (err) {
     console.log("Error, getSignup:", err);
+    res.send(err);
   }
 };
 
@@ -44,10 +45,7 @@ restaurantController.processLogin = async (req: Request, res: Response) => {
     res.send(result);
   } catch (err: any) {
     console.log("Error, processLogin", err);
-    // Send error response
-    res
-      .status(err.code || 500)
-      .json({ message: err.message || "Internal server error" });
+    res.send(err);
   }
 };
 
