@@ -1,125 +1,136 @@
-// // // import { stringify } from "querystring";
+// // // // import { stringify } from "querystring";
 
-// // // console.log("=======task_g==========");
+// // // // console.log("=======task_g==========");
 
-// // // function getHighestIndex(arr: number[]): number {
-// // //   let max = arr[0];
-// // //   let index = 0;
+// // // // function getHighestIndex(arr: number[]): number {
+// // // //   let max = arr[0];
+// // // //   let index = 0;
 
-// // //   for (let i = 1; i < arr.length; i++) {
-// // //     if (arr[i] > max) {
-// // //       max = arr[i];
-// // //       index = i;
+// // // //   for (let i = 1; i < arr.length; i++) {
+// // // //     if (arr[i] > max) {
+// // // //       max = arr[i];
+// // // //       index = i;
+// // // //     }
+// // // //   }
+// // // //   return index;
+// // // // }
+
+// // // // console.log(
+// // // //   getHighestIndex([
+// // // //     9, 4, 94, 6, 36, 2, 1, 0, 3, 5, 7, 8, 10, 11, 12, 13, 14, 15,
+// // // //   ])
+// // // // );
+
+// // // // console.log("=======task_h==========");
+
+// // // // function getPositiveAsString(arr: number[]): string {
+// // // //   let result = "";
+
+// // // //   for (let i = 0; i < arr.length; i++) {
+// // // //     if (arr[i] > 0) {
+// // // //       result += arr[i].toString();
+// // // //     }
+// // // //   }
+// // // //   return result;
+// // // // }
+
+// // // // console.log(
+// // // //   getPositiveAsString([9, -4, 94, -6, 36, 2, -1, 0, 3, 5, -7, 8, 10, 11, 12])
+// // // // );
+
+// // // // console.log("=======task_h2==========");
+
+// // // // function getDigits(input: string): string {
+// // // //   return input.replace(/\D/g, "");
+// // // // }
+// // // // //  \D means any character that is not a digit. (Digits are 0 through 9.)
+// // // // // - The g flag stands for global, which means "replace all matches in the string," not just the first one.
+// // // // // - '' is an empty string, which is what we're replacing the non-digit characters with.
+// // // // // The slashes /.../ are how you define a regular expression (also called a “regex”) in JavaScript and TypeScript.
+// // // // // They are like quotation marks, but for regular expressions.
+
+// // // // console.log(getDigits("a1b2c3d4e5f6g7h8i9j0"));
+
+// // // // Project standards:
+// // // // - Logging standards (morgan
+// // // //   Naming standards
+// // // //       function, method, variable names: camelCase
+// // // //       class names: PascalCase
+// // // //       folder names and file names: kebab-case
+// // // //       css : snake_case
+// // // // Error handling standards
+
+// // // // Tradtional API
+// // // // Rest API
+// // // // GraphQL API
+// // // // .....
+
+// // // console.log("=======task_i==========");
+
+// // // function majorityElement(arr: number[]): number | null {
+// // //   const countMap: Record<number, number> = {};
+// // //   // Record is a utility type in TypeScript that allows you to create an object type with specific keys and values.
+// // //   // In this case, countMap will have keys of type number and values of type number
+// // //   for (const num of arr) {
+// // //     countMap[num] = (countMap[num] || 0) + 1; // Here we are counting the occurrences of each number. || 0) + 1 calculates the count of each number in the array.
+// // //   }
+
+// // //   let maxCount = 0; // Initialize maxCount to 0 to keep track of the highest count
+// // //   // maxCount will store the maximum count of any number in the array. For example, if the number 1 appears 3 times, maxCount will be updated to 3.
+// // //   // If no number appears more than once, maxCount will remain 0.
+// // //   let majority: number | null = null;
+
+// // //   for (const key in countMap) {
+// // //     // key is a string representing the number in countMap. For example, if countMap has letter "a ", it means the number 1 appeared in the array.
+// // //     if (countMap[key] > maxCount) {
+// // //       // If the count of the current number is greater than maxCount, we update maxCount and majority.
+// // //       maxCount = countMap[key];
+// // //       majority = Number(key);
 // // //     }
 // // //   }
-// // //   return index;
+
+// // //   return majority;
 // // // }
 
-// // // console.log(
-// // //   getHighestIndex([
-// // //     9, 4, 94, 6, 36, 2, 1, 0, 3, 5, 7, 8, 10, 11, 12, 13, 14, 15,
-// // //   ])
-// // // );
+// // // console.log(majorityElement([1, 2, 1, 4, 5, 1, 3, 4]));
 
-// // // console.log("=======task_h==========");
+// // function findLongestWord(str: string): string {
+// //   const words: string[] = str.split(" ");
+// //   let longest: string = "";
 
-// // // function getPositiveAsString(arr: number[]): string {
-// // //   let result = "";
-
-// // //   for (let i = 0; i < arr.length; i++) {
-// // //     if (arr[i] > 0) {
-// // //       result += arr[i].toString();
-// // //     }
-// // //   }
-// // //   return result;
-// // // }
-
-// // // console.log(
-// // //   getPositiveAsString([9, -4, 94, -6, 36, 2, -1, 0, 3, 5, -7, 8, 10, 11, 12])
-// // // );
-
-// // // console.log("=======task_h2==========");
-
-// // // function getDigits(input: string): string {
-// // //   return input.replace(/\D/g, "");
-// // // }
-// // // //  \D means any character that is not a digit. (Digits are 0 through 9.)
-// // // // - The g flag stands for global, which means "replace all matches in the string," not just the first one.
-// // // // - '' is an empty string, which is what we're replacing the non-digit characters with.
-// // // // The slashes /.../ are how you define a regular expression (also called a “regex”) in JavaScript and TypeScript.
-// // // // They are like quotation marks, but for regular expressions.
-
-// // // console.log(getDigits("a1b2c3d4e5f6g7h8i9j0"));
-
-// // // Project standards:
-// // // - Logging standards (morgan
-// // //   Naming standards
-// // //       function, method, variable names: camelCase
-// // //       class names: PascalCase
-// // //       folder names and file names: kebab-case
-// // //       css : snake_case
-// // // Error handling standards
-
-// // // Tradtional API
-// // // Rest API
-// // // GraphQL API
-// // // .....
-
-// // console.log("=======task_i==========");
-
-// // function majorityElement(arr: number[]): number | null {
-// //   const countMap: Record<number, number> = {};
-// //   // Record is a utility type in TypeScript that allows you to create an object type with specific keys and values.
-// //   // In this case, countMap will have keys of type number and values of type number
-// //   for (const num of arr) {
-// //     countMap[num] = (countMap[num] || 0) + 1; // Here we are counting the occurrences of each number. || 0) + 1 calculates the count of each number in the array.
-// //   }
-
-// //   let maxCount = 0; // Initialize maxCount to 0 to keep track of the highest count
-// //   // maxCount will store the maximum count of any number in the array. For example, if the number 1 appears 3 times, maxCount will be updated to 3.
-// //   // If no number appears more than once, maxCount will remain 0.
-// //   let majority: number | null = null;
-
-// //   for (const key in countMap) {
-// //     // key is a string representing the number in countMap. For example, if countMap has letter "a ", it means the number 1 appeared in the array.
-// //     if (countMap[key] > maxCount) {
-// //       // If the count of the current number is greater than maxCount, we update maxCount and majority.
-// //       maxCount = countMap[key];
-// //       majority = Number(key);
+// //   for (const word of words) {
+// //     if (word.length > longest.length) {
+// //       longest = word;
 // //     }
 // //   }
 
-// //   return majority;
+// //   return longest;
 // // }
 
-// // console.log(majorityElement([1, 2, 1, 4, 5, 1, 3, 4]));
+// // console.log(findLongestWord("한국 생활이 어렵지만 재미있고 변하긴 한다."));
+// console.log("task_k");
+// function countVowels(str: string): number {
+//   const vowels: string = "aeiouAEIOU";
+//   let count: number = 0;
 
-// function findLongestWord(str: string): string {
-//   const words: string[] = str.split(" ");
-//   let longest: string = "";
-
-//   for (const word of words) {
-//     if (word.length > longest.length) {
-//       longest = word;
+//   for (const char of str) {
+//     if (vowels.includes(char)) {
+//       count++;
 //     }
 //   }
 
-//   return longest;
+//   return count;
 // }
 
-// console.log(findLongestWord("한국 생활이 어렵지만 재미있고 변하긴 한다."));
-console.log("task_k");
-function countVowels(str: string): number {
-  const vowels: string = "aeiouAEIOU";
-  let count: number = 0;
+// console.log(countVowels("Mashaqqat izlagan talabalar"));
 
-  for (const char of str) {
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-
-  return count;
+function reverseSentence(sentence: string): string {
+  return sentence
+    .split(" ") // So‘zlarni ajratamiz
+    .map(
+      (word) => word.split("").reverse().join("") // Har bir so‘zni teskarisiga o‘giramiz
+    )
+    .join(" "); // So‘zlarni qayta birlashtiramiz
 }
 
-console.log(countVowels("Mashaqqat izlagan talabalar"));
+console.log(reverseSentence("Hello MIT"));
