@@ -1,16 +1,3 @@
-// console.log("is it working?");
-
-// // const person: string = "Toshmat";
-// // const count: number = 100;
-
-// import moment from "moment";
-
-// const currentTime = moment().format("YYYY:MM:DD: HH:mm:ss");
-// console.log(currentTime);
-
-// const person: string = "Martin";
-// const count: number = 100;
-
 //architectural pattern:
 // (backend) MVC (Model-View-Controller), DI (Dependency Injection),
 // (frontend) MVP (model-view-presenter), MVVM (model-view-view-model),
@@ -23,6 +10,7 @@ dotenv.config();
 import mongoose from "mongoose";
 import app from "./app";
 
+//TCP-1 (Abbreviation for Transmission Control Protocol) . This TCP connection is for the MongoDB database. Which is used to store and retrieve data for the application.
 mongoose
   .connect(process.env.MONGO_URL as string, {})
   .then((data) => {
