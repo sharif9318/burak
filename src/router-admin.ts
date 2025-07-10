@@ -2,6 +2,7 @@ import express from "express";
 const routerAdmin = express.Router();
 import restaurantController from "./controllers/restaurant.controller";
 import productController from "./controllers/product-controller";
+import makeUploader from "./libs/utils/uploader";
 
 //Restaurant Admin Routes
 // BSSR: EJS
@@ -11,7 +12,11 @@ routerAdmin
   .post("/login", restaurantController.processLogin);
 routerAdmin
   .get("/signup", restaurantController.getSignup)
-  .post("/signup", restaurantController.processSignup);
+  .post(
+    "/signup",
+    makeUploader("members").single("memberImage"),
+    restaurantController.processSignup
+  );
 routerAdmin.get("/logout", restaurantController.logout);
 
 routerAdmin.get("/check-me", restaurantController.checkAuthSesson);
@@ -26,6 +31,8 @@ routerAdmin.get(
 routerAdmin.post(
   "/product/create",
   restaurantController.verifyRestaurant,
+  makeUploader("products").array("productImages", 5),
+  // uploadProductImage.single("productImage"),
   productController.createNewProduct
 );
 
