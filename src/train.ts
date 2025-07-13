@@ -124,13 +124,23 @@
 
 // console.log(countVowels("Mashaqqat izlagan talabalar"));
 
-function reverseSentence(sentence: string): string {
-  return sentence
-    .split(" ") // So‘zlarni ajratamiz
-    .map(
-      (word) => word.split("").reverse().join("") // Har bir so‘zni teskarisiga o‘giramiz
-    )
-    .join(" "); // So‘zlarni qayta birlashtiramiz
-}
+// function reverseSentence(sentence: string): string {
+//   return sentence
+//     .split(" ") // So‘zlarni ajratamiz
+//     .map(
+//       (word) => word.split("").reverse().join("") // Har bir so‘zni teskarisiga o‘giramiz
+//     )
+//     .join(" "); // So‘zlarni qayta birlashtiramiz
+// }
 
-console.log(reverseSentence("Hello MIT"));
+// console.log(reverseSentence("Hello MIT"));
+
+console.log("=======task_m==========");
+
+function getSquareNumbers(arr: number[]): { number: number; square: number }[] {
+  return arr.map((num) => ({
+    number: num,
+    square: num * num,
+  }));
+}
+console.log(getSquareNumbers([1, 2, 3]));
