@@ -145,12 +145,26 @@
 // }
 // console.log(getSquareNumbers([1, 2, 3]));
 
-console.log("=======task_n==========");
+// console.log("=======task_n==========");
 
-function palindromCheck(str: string): boolean {
-  const lowered: string = str.toLowerCase();
-  const reversed: string = lowered.split('').reverse().join('');
-  return lowered === reversed;
+// function palindromCheck(str: string): boolean {
+//   const lowered: string = str.toLowerCase();
+//   const reversed: string = lowered.split('').reverse().join('');
+//   return lowered === reversed;
+// }
+
+// console.log(palindromCheck("DEVEX"))
+
+console.log("=====task_o============");
+
+function calculateSumOfNumbers(arr: any[]): number {
+    return arr.reduce((sum: number, item: any) => {
+        if (typeof item === "number" && Number.isFinite(item)) {
+            return sum + item;
+        }
+        return sum;
+    }, 0);
 }
 
-console.log(palindromCheck("DEVEX"))
+console.log(calculateSumOfNumbers([90, "10", {son: 50}, true, 200]));
+
