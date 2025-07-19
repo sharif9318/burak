@@ -155,16 +155,28 @@
 
 // console.log(palindromCheck("DEVEX"))
 
-console.log("=====task_o============");
+// console.log("=====task_o============");
 
-function calculateSumOfNumbers(arr: any[]): number {
-    return arr.reduce((sum: number, item: any) => {
-        if (typeof item === "number" && Number.isFinite(item)) {
-            return sum + item;
-        }
-        return sum;
-    }, 0);
+// function calculateSumOfNumbers(arr: any[]): number {
+//     return arr.reduce((sum: number, item: any) => {
+//         if (typeof item === "number" && Number.isFinite(item)) {
+//             return sum + item;
+//         }
+//         return sum;
+//     }, 0);
+// }
+
+// console.log(calculateSumOfNumbers([90, "10", {son: 50}, true, 200]));
+
+console.log("=======task_p==========");
+
+function objectToArray(obj: { [key: string]: any }): [string, any][] {
+  const result: [string, any][] = [];
+
+  for (const key in obj) {
+    result.push([key, obj[key]]);
+  }
+
+  return result;
 }
-
-console.log(calculateSumOfNumbers([90, "10", {son: 50}, true, 200]));
-
+console.log(objectToArray({ 성함: "강건일", age: 30, city: "수원" }));
