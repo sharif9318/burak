@@ -168,15 +168,24 @@
 
 // console.log(calculateSumOfNumbers([90, "10", {son: 50}, true, 200]));
 
-console.log("=======task_p==========");
+// console.log("=======task_p==========");
 
-function objectToArray(obj: { [key: string]: any }): [string, any][] {
-  const result: [string, any][] = [];
+// function objectToArray(obj: { [key: string]: any }): [string, any][] {
+//   const result: [string, any][] = [];
 
-  for (const key in obj) {
-    result.push([key, obj[key]]);
-  }
+//   for (const key in obj) {
+//     result.push([key, obj[key]]);
+//   }
 
-  return result;
+//   return result;
+// }
+// console.log(objectToArray({ 성함: "강건일", age: 30, city: "수원" }));
+
+console.log("=======task_q============")
+
+function hasProperty(obj: any, key: string): boolean {
+    return key in obj;
 }
-console.log(objectToArray({ 성함: "강건일", age: 30, city: "수원" }));
+
+console.log(hasProperty({ davlat: "Uzbekistan", viloyat: "Buxoro" }, "viloyat")); 
+console.log(hasProperty({ davlat: "Uzbekistan", viloyat: "Buxoro" }, "tuman"));
