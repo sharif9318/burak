@@ -190,15 +190,28 @@
 // console.log(hasProperty({ davlat: "Uzbekistan", viloyat: "Buxoro" }, "viloyat")); 
 // console.log(hasProperty({ davlat: "Uzbekistan", viloyat: "Buxoro" }, "tuman"));
 
-console.log("=======task_r============");
+// console.log("=======task_r============");
 
-function calculate(expression: string): number {
+// function calculate(expression: string): number {
   
-  const numbers = expression.split('+'); 
-  const sum = numbers.reduce((acc, val) => acc + parseInt(val.trim()), 0);
+//   const numbers = expression.split('+'); 
+//   const sum = numbers.reduce((acc, val) => acc + parseInt(val.trim()), 0);
 
-  return sum;
+//   return sum;
+// }
+
+
+// console.log(calculate("35 + 986")); 
+
+console.log("=======task_s============");
+
+function missingNumber(nums: number[]): number {
+  nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== i) return i;
+  }
+  return nums.length;
 }
 
 
-console.log(calculate("35 + 986")); 
+console.log(missingNumber([3, 0, 1]));
