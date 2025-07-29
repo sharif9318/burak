@@ -203,15 +203,26 @@
 
 // console.log(calculate("35 + 986")); 
 
-console.log("=======task_s============");
+// console.log("=======task_s============");
 
-function missingNumber(nums: number[]): number {
-  nums.sort((a, b) => a - b);
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== i) return i;
-  }
-  return nums.length;
+// function missingNumber(nums: number[]): number {
+//   nums.sort((a, b) => a - b);
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== i) return i;
+//   }
+//   return nums.length;
+// }
+
+
+// console.log(missingNumber([3, 0, 1]));
+
+console.log("=======task_t============");
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const mergedArray = [...arr1, ...arr2]; 
+  return mergedArray.sort((a, b) => a - b);
 }
 
-
-console.log(missingNumber([3, 0, 1]));
+// Misol uchun:
+const result = mergeSortedArrays([0, 8, 4, 7], [9, 6, 30]);
+console.log(result);
