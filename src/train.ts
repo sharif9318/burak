@@ -216,13 +216,25 @@
 
 // console.log(missingNumber([3, 0, 1]));
 
-console.log("=======task_t============");
+// console.log("=======task_t============");
 
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  const mergedArray = [...arr1, ...arr2]; 
-  return mergedArray.sort((a, b) => a - b);
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   const mergedArray = [...arr1, ...arr2]; 
+//   return mergedArray.sort((a, b) => a - b);
+// }
+
+// // Misol uchun:
+// const result = mergeSortedArrays([0, 8, 4, 7], [9, 6, 30]);
+// console.log(result);
+
+console.log("=======task_u============");
+
+function sumOdds(limit: number): number {
+  let count = 0;
+  for (let i = 1; i <= limit; i += 2) {
+    count++;
+  }
+  return count;
 }
 
-// Misol uchun:
-const result = mergeSortedArrays([0, 8, 4, 7], [9, 6, 30]);
-console.log(result);
+console.log(sumOdds(20));
