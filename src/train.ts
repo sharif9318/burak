@@ -227,14 +227,28 @@
 // const result = mergeSortedArrays([0, 8, 4, 7], [9, 6, 30]);
 // console.log(result);
 
-console.log("=======task_u============");
+// console.log("=======task_u============");
 
-function sumOdds(limit: number): number {
-  let count = 0;
-  for (let i = 1; i <= limit; i += 2) {
-    count++;
+// function sumOdds(limit: number): number {
+//   let count = 0;
+//   for (let i = 1; i <= limit; i += 2) {
+//     count++;
+//   }
+//   return count;
+// }
+
+// console.log(sumOdds(20));
+
+console.log("=======task_v============");
+
+function countChars(input: string): Record<string, number> {
+  const result: Record<string, number> = {};
+
+  for (const char of input) {
+    result[char] = (result[char] || 0) + 1;
   }
-  return count;
+
+  return result;
 }
 
-console.log(sumOdds(20));
+console.log(countChars("TOSHMAT")); 
