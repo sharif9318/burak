@@ -239,16 +239,30 @@
 
 // console.log(sumOdds(20));
 
-console.log("=======task_v============");
+// console.log("=======task_v============");
 
-function countChars(input: string): Record<string, number> {
-  const result: Record<string, number> = {};
+// function countChars(input: string): Record<string, number> {
+//   const result: Record<string, number> = {};
 
-  for (const char of input) {
-    result[char] = (result[char] || 0) + 1;
+//   for (const char of input) {
+//     result[char] = (result[char] || 0) + 1;
+//   }
+
+//   return result;
+// }
+
+// console.log(countChars("TOSHMAT")); 
+
+console.log("=======task_w============");
+
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  const result: T[][] = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
   }
 
   return result;
 }
 
-console.log(countChars("TOSHMAT")); 
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 4)); 
