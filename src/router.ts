@@ -14,9 +14,10 @@ router.post("/member/update", memberController.verifyAuth,
     memberController.updateMember
 );
 
+router.get ("/member/top-users", memberController.getTopUsers);
+
 /** Product **/
 
 /** Order **/
-
 
 export default router;
