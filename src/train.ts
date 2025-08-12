@@ -253,16 +253,58 @@
 
 // console.log(countChars("TOSHMAT")); 
 
-console.log("=======task_w============");
+// console.log("=======task_w============");
 
-function chunkArray<T>(arr: T[], size: number): T[][] {
-  const result: T[][] = [];
+// function chunkArray<T>(arr: T[], size: number): T[][] {
+//   const result: T[][] = [];
 
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
+//   for (let i = 0; i < arr.length; i += size) {
+//     result.push(arr.slice(i, i + size));
+//   }
+
+//   return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 4)); 
+
+console.log("=======task_x============");
+
+function countOccurrences(obj: any, keyToCount: string): number {
+  let count = 0;
+
+  // Bu funksiya obyektni ichma-ich tekshiradi
+  function search(innerObj: any) {
+    // Faqat object bo'lsa tekshiramiz
+    if (typeof innerObj === 'object' && innerObj !== null) {
+      // Har bir kalitni tekshiramiz
+      for (let key in innerObj) {
+        // Agar kalit biz izlayotgan kalitga teng bo'lsa, count ni oshiramiz
+        if (key === keyToCount) {
+          count++;
+        }
+        // Qiymat yana object bo'lishi mumkin, shuning uchun rekursiv chaqiramiz
+        search(innerObj[key]);
+      }
+    }
   }
 
-  return result;
+  // Dastlabki obyektni tekshirishni boshlaymiz
+  search(obj);
+
+  // Natijani qaytaramiz
+  return count;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 4)); 
+const person = {
+  name: 'Ali',
+  address: {
+    city: 'Tashkent',
+    street: {
+      name: 'Navoi',
+      code: 123
+    }
+  },
+  street: 'Yunusobod'
+};
+
+console.log(countOccurrences(person, 'street')); 
