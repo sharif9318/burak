@@ -267,44 +267,66 @@
 
 // console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8], 4)); 
 
-console.log("=======task_x============");
+// console.log("=======task_x============");
 
-function countOccurrences(obj: any, keyToCount: string): number {
-  let count = 0;
+// function countOccurrences(obj: any, keyToCount: string): number {
+//   let count = 0;
 
-  // Bu funksiya obyektni ichma-ich tekshiradi
-  function search(innerObj: any) {
-    // Faqat object bo'lsa tekshiramiz
-    if (typeof innerObj === 'object' && innerObj !== null) {
-      // Har bir kalitni tekshiramiz
-      for (let key in innerObj) {
-        // Agar kalit biz izlayotgan kalitga teng bo'lsa, count ni oshiramiz
-        if (key === keyToCount) {
-          count++;
+//   // Bu funksiya obyektni ichma-ich tekshiradi
+//   function search(innerObj: any) {
+//     // Faqat object bo'lsa tekshiramiz
+//     if (typeof innerObj === 'object' && innerObj !== null) {
+//       // Har bir kalitni tekshiramiz
+//       for (let key in innerObj) {
+//         // Agar kalit biz izlayotgan kalitga teng bo'lsa, count ni oshiramiz
+//         if (key === keyToCount) {
+//           count++;
+//         }
+//         // Qiymat yana object bo'lishi mumkin, shuning uchun rekursiv chaqiramiz
+//         search(innerObj[key]);
+//       }
+//     }
+//   }
+
+//   // Dastlabki obyektni tekshirishni boshlaymiz
+//   search(obj);
+
+//   // Natijani qaytaramiz
+//   return count;
+// }
+
+// const person = {
+//   name: 'Ali',
+//   address: {
+//     city: 'Tashkent',
+//     street: {
+//       name: 'Navoi',
+//       code: 123
+//     }
+//   },
+//   street: 'Yunusobod'
+// };
+
+// console.log(countOccurrences(person, 'street')); 
+
+console.log("=======task_y============");
+
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+    let result: number[] = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        let value = arr1[i];
+
+        // Agar value arr2 ichida mavjud bo‘lsa
+        if (arr2.includes(value)) {
+            // Takrorlanmasligi uchun result ichida yo‘qligini tekshiramiz
+            if (!result.includes(value)) {
+                result.push(value);
+            }
         }
-        // Qiymat yana object bo'lishi mumkin, shuning uchun rekursiv chaqiramiz
-        search(innerObj[key]);
-      }
     }
-  }
 
-  // Dastlabki obyektni tekshirishni boshlaymiz
-  search(obj);
-
-  // Natijani qaytaramiz
-  return count;
+    return result;
 }
 
-const person = {
-  name: 'Ali',
-  address: {
-    city: 'Tashkent',
-    street: {
-      name: 'Navoi',
-      code: 123
-    }
-  },
-  street: 'Yunusobod'
-};
-
-console.log(countOccurrences(person, 'street')); 
+console.log(findIntersection([89,75,16,108], [2, 5, 9, 108, 1, 75])); 
