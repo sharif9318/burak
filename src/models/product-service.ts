@@ -78,9 +78,7 @@ public async getProduct(
     console.log("exist:", !!existView);
     if (!existView) {
         // Insert View
-        console.log("Creating view with input:", input);
         await this.viewService.insertMemberView(input);
-    }
 
     // Increase Counts
     result = await this.ProductModel
@@ -91,7 +89,7 @@ public async getProduct(
         )
         .exec();
 }
-
+  }
 
   return result;
 }
