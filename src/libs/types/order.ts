@@ -19,6 +19,8 @@ export interface Order {
   memberId: ObjectId;
   createdAt: Date;
   updatedAt: Date;
+  // from aggreagations//
+  orderItems: OrderItem[];
  }
 
 export interface OrderItemInput {
@@ -26,4 +28,10 @@ export interface OrderItemInput {
   itemQuantity: number;
   itemPrice: number;
   productId: ObjectId;
+}
+
+export interface OrderInquiry {
+  page: number;
+  limit: number;
+  orderStatus: OrderStatus;
 }
