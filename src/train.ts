@@ -309,24 +309,33 @@
 
 // console.log(countOccurrences(person, 'street')); 
 
-console.log("=======task_y============");
+// console.log("=======task_y============");
 
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-    let result: number[] = [];
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//     let result: number[] = [];
 
-    for (let i = 0; i < arr1.length; i++) {
-        let value = arr1[i];
+//     for (let i = 0; i < arr1.length; i++) {
+//         let value = arr1[i];
 
-        // Agar value arr2 ichida mavjud bo‘lsa
-        if (arr2.includes(value)) {
-            // Takrorlanmasligi uchun result ichida yo‘qligini tekshiramiz
-            if (!result.includes(value)) {
-                result.push(value);
-            }
-        }
-    }
+//         // Agar value arr2 ichida mavjud bo‘lsa
+//         if (arr2.includes(value)) {
+//             // Takrorlanmasligi uchun result ichida yo‘qligini tekshiramiz
+//             if (!result.includes(value)) {
+//                 result.push(value);
+//             }
+//         }
+//     }
 
-    return result;
+//     return result;
+// }
+
+// console.log(findIntersection([89,75,16,108], [2, 5, 9, 108, 1, 75])); 
+ console.log("=======task_z============");
+
+ function sumEvens(numbers: number[]): number {
+  return numbers
+    .filter(num => num % 2 === 0) // faqat juft sonlarni tanlaydi
+    .reduce((sum, num) => sum + num, 0); // tanlangan sonlarni yig‘adi
 }
 
-console.log(findIntersection([89,75,16,108], [2, 5, 9, 108, 1, 75])); 
+console.log(sumEvens([1, 2, 3, 4, 5, 6])); 
