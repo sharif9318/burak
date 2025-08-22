@@ -330,12 +330,22 @@
 // }
 
 // console.log(findIntersection([89,75,16,108], [2, 5, 9, 108, 1, 75])); 
- console.log("=======task_z============");
+//  console.log("=======task_z============");
 
- function sumEvens(numbers: number[]): number {
-  return numbers
-    .filter(num => num % 2 === 0) // faqat juft sonlarni tanlaydi
-    .reduce((sum, num) => sum + num, 0); // tanlangan sonlarni yig‘adi
-}
+//  function sumEvens(numbers: number[]): number {
+//   return numbers
+//     .filter(num => num % 2 === 0) // faqat juft sonlarni tanlaydi
+//     .reduce((sum, num) => sum + num, 0); // tanlangan sonlarni yig‘adi
+// }
 
-console.log(sumEvens([1, 2, 3, 4, 5, 6])); 
+// console.log(sumEvens([1, 2, 3, 4, 5, 6])); 
+
+console.log("=======task_ZA============");
+
+const sortByAge = (arr: any[]) => arr.sort((a, b) => a.age - b.age); 
+const people = [
+  { name: "Eshmat", age: 30 },
+  { name: "Toshmat", age: 25 },
+  { name: "Sharapat", age: 35 }
+];
+console.log(sortByAge(people)); 
