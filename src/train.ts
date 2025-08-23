@@ -340,12 +340,19 @@
 
 // console.log(sumEvens([1, 2, 3, 4, 5, 6])); 
 
-console.log("=======task_ZA============");
+// console.log("=======task_ZA============");
 
-const sortByAge = (arr: any[]) => arr.sort((a, b) => a.age - b.age); 
-const people = [
-  { name: "Eshmat", age: 30 },
-  { name: "Toshmat", age: 25 },
-  { name: "Sharapat", age: 35 }
-];
-console.log(sortByAge(people)); 
+// const sortByAge = (arr: any[]) => arr.sort((a, b) => a.age - b.age); 
+// const people = [
+//   { name: "Eshmat", age: 30 },
+//   { name: "Toshmat", age: 25 },
+//   { name: "Sharapat", age: 35 }
+// ];
+// console.log(sortByAge(people)); 
+
+console.log("=======task_ZC============");
+
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
+}
+console.log(celsiusToFahrenheit(10));
