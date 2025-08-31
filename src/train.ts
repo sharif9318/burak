@@ -357,16 +357,23 @@
 // }
 // console.log(celsiusToFahrenheit(10));
 
-console.log("=======task_ZD============");
+// console.log("=======task_ZD============");
 
-function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
+// function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
  
-  const updatedArray = [...arr];
+//   const updatedArray = [...arr];
 
-  if (index >= 0 && index < updatedArray.length) {
-    updatedArray[index] = newValue;
-  }
+//   if (index >= 0 && index < updatedArray.length) {
+//     updatedArray[index] = newValue;
+//   }
 
-  return updatedArray;
+//   return updatedArray;
+// }
+// console.log(changeNumberInArray(2, [10, 20, 30, 40, 50], 99));
+
+console.log("=======task_ZE============");
+
+function removeDuplicate(input: string): string {
+  return [...new Set(input)].join('');
 }
-console.log(changeNumberInArray(2, [10, 20, 30, 40, 50], 99));
+console.log(removeDuplicate("abbccddeef"));
