@@ -371,9 +371,27 @@
 // }
 // console.log(changeNumberInArray(2, [10, 20, 30, 40, 50], 99));
 
-console.log("=======task_ZE============");
+// console.log("=======task_ZE============");
 
-function removeDuplicate(input: string): string {
-  return [...new Set(input)].join('');
+// function removeDuplicate(input: string): string {
+//   return [...new Set(input)].join('');
+// }
+// console.log(removeDuplicate("abbccddeef"));
+
+console.log("=======task_ZF============");
+
+function capitalizeWords(text: string): string {
+   const words = text.split(' ');
+  const newWords = words.map(word => {
+     if (word.length > 2) {
+      return word[0].toUpperCase() + word.slice(1);
+    } else {
+     
+      return word;
+    }
+  });
+
+   return newWords.join(' ');
 }
-console.log(removeDuplicate("abbccddeef"));
+
+console.log(capitalizeWords("hello to the world of programming"));
