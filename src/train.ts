@@ -378,20 +378,33 @@
 // }
 // console.log(removeDuplicate("abbccddeef"));
 
-console.log("=======task_ZF============");
+// console.log("=======task_ZF============");
 
-function capitalizeWords(text: string): string {
-   const words = text.split(' ');
-  const newWords = words.map(word => {
-     if (word.length > 2) {
-      return word[0].toUpperCase() + word.slice(1);
-    } else {
+// function capitalizeWords(text: string): string {
+//    const words = text.split(' ');
+//   const newWords = words.map(word => {
+//      if (word.length > 2) {
+//       return word[0].toUpperCase() + word.slice(1);
+//     } else {
      
-      return word;
-    }
-  });
+//       return word;
+//     }
+//   });
 
-   return newWords.join(' ');
+//    return newWords.join(' ');
+// }
+
+// console.log(capitalizeWords("hello to the world of programming"));
+
+
+console.log("=======task_ZG============");
+
+function convertToSnakeCase(input: string): string {
+  return input
+    .trim() 
+    .toLowerCase()
+    .replace(/\s+/g, '_'); 
+
 }
 
-console.log(capitalizeWords("hello to the world of programming"));
+console.log(convertToSnakeCase('Oq bu qora, qora bu oq bolsa nima qilarding?')); 

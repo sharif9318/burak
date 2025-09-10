@@ -3,7 +3,7 @@ import { ObjectId } from "mongoose";
 
 export interface OrderItem {
   _id: ObjectId;
-  itemQuanity: number;
+  itemQuantity: number;
   itemPrice: number;
   orderId: ObjectId;
   productId: ObjectId;
