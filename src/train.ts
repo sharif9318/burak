@@ -397,14 +397,36 @@
 // console.log(capitalizeWords("hello to the world of programming"));
 
 
-console.log("=======task_ZG============");
+// console.log("=======task_ZG============");
 
-function convertToSnakeCase(input: string): string {
-  return input
-    .trim() 
-    .toLowerCase()
-    .replace(/\s+/g, '_'); 
+// function convertToSnakeCase(input: string): string {
+//   return input
+//     .trim() 
+//     .toLowerCase()
+//     .replace(/\s+/g, '_'); 
 
+// }
+
+// console.log(convertToSnakeCase('Oq bu qora, qora bu oq bolsa nima qilarding?')); 
+
+console.log("=======task_ZH============");
+
+function findDisappearedNumbers(arr: number[]): number[] {
+  if (arr.length === 0) return [];
+
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const set = new Set(arr);
+  const missing: number[] = [];
+
+  for (let i = min; i <= max; i++) {
+    if (!set.has(i)) {
+      missing.push(i);
+    }
+  }
+
+  return missing;
 }
 
-console.log(convertToSnakeCase('Oq bu qora, qora bu oq bolsa nima qilarding?')); 
+
+console.log(findDisappearedNumbers([98,58,22,46,78,12,8,1,3,4,5,6,7,9,10,11,13,14,15,16,17,18,19,20,21])); 
